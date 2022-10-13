@@ -31,7 +31,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  isar: ^3.0.2
+  isar: ^2.2.1
   cupertino_icons: ^1.0.5
 
 dev_dependencies:
