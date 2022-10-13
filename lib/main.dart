@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:isar/isar.dart';
+import 'package:routine_app/collecetion/category.dart';
+import 'package:routine_app/collecetion/routine.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  final dir = await getApplicationSupportDirectory();
+  final isar = await Isar.open(
+    schemas: [RoutineSchema, CategorySchema],
+    directory: dir.path,
+  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

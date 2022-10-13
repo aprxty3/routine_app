@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:isar/isar.dart';
-//Needs : category, title, start time, day
+import 'category.dart';
+part 'routine.g.dart';
 
 @Collection()
 class Routine {
@@ -13,8 +13,8 @@ class Routine {
   late DateTime startTime;
 
   @Index(caseSensitive: false)
-  late String dayTime;
+  late String day;
 
-  @Index(composite: [CompositeIndex('index')])
+  @Index(composite: [CompositeIndex('title')])
   final category = IsarLink<Category>();
 }
